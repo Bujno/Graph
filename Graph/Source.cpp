@@ -12,11 +12,12 @@ int main()
 
 	ListGraph L(7);
 	L.addEdge(5, 3);
-	L.addEdge(3, 6);
+	L.addEdge(5, 6);
 	L.addEdge(1, 6);
 	L.addEdge(1, 5);
-	L.addEdge(4, 2);
-	L.addEdge(4, 3);
+	L.addEdge(4, 1);
+	L.addEdge(4, 5);
+	L.addEdge(2, 3);
 
 	cout << L.exist(5, 3) << endl;
 	cout << L.exist(6, 2) << endl;
@@ -31,6 +32,7 @@ int main()
 
 	DFS <ListGraph> L_DFS(L);
 	L_DFS.search(1);
+	L_DFS.show();
 
 	system("pause");
 	return 0;

@@ -3,4 +3,8 @@ c:\users\bujno\source\repos\graph\graph\listgraph.h(39): warning C4018: '<': sig
 c:\users\bujno\source\repos\graph\graph\listgraph.h(44): warning C4018: '<': signed/unsigned mismatch
 c:\users\bujno\source\repos\graph\graph\listgraph.h(53): warning C4018: '<': signed/unsigned mismatch
 c:\users\bujno\source\repos\graph\graph\matrixgraph.h(28): warning C4018: '<': signed/unsigned mismatch
+c:\users\bujno\source\repos\graph\graph\algorithms.h(18): warning C4018: '<': signed/unsigned mismatch
+  c:\users\bujno\source\repos\graph\graph\algorithms.h(17): note: while compiling class template member function 'void DFS<ListGraph>::show(void)'
+  c:\users\bujno\source\repos\graph\graph\source.cpp(35): note: see reference to function template instantiation 'void DFS<ListGraph>::show(void)' being compiled
+  c:\users\bujno\source\repos\graph\graph\source.cpp(33): note: see reference to class template instantiation 'DFS<ListGraph>' being compiled
   Graph.vcxproj -> C:\Users\bujno\source\repos\Graph\Debug\Graph.exe
