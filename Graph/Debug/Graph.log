@@ -1,0 +1,6 @@
+﻿  Source.cpp
+c:\users\bujno\source\repos\graph\graph\listgraph.h(38): warning C4018: '<': signed/unsigned mismatch
+c:\users\bujno\source\repos\graph\graph\listgraph.h(43): warning C4018: '<': signed/unsigned mismatch
+c:\users\bujno\source\repos\graph\graph\listgraph.h(52): warning C4018: '<': signed/unsigned mismatch
+c:\users\bujno\source\repos\graph\graph\matrixgraph.h(27): warning C4018: '<': signed/unsigned mismatch
+  Graph.vcxproj -> C:\Users\bujno\source\repos\Graph\Debug\Graph.exe
