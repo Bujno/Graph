@@ -54,5 +54,7 @@ void MatrixGraph::remEdge(int w, int v)
 
 bool MatrixGraph::exist(int w, int v)
 {
-	return L[w][v];
+	if (L[w][v]==1)
+		return true;
+	else return false;
 }
