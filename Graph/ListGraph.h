@@ -9,7 +9,8 @@ protected:
 	vector<vector<int> > L;
 public:
 	int s;													//liczba wierzcho³ków
-	ListGraph(int s) : L(s, vector<int>()), s(s) {}
+	int k;													//liczba krawedzi
+	ListGraph(int s) : L(s, vector<int>()), s(s) { k = 0; }
 	void addEdge(int, int);
 	void remEdge(int, int);
 	bool exist(int, int);
@@ -32,6 +33,7 @@ void ListGraph::addEdge(int w, int v)
 {
 	L[v].push_back(w);
 	L[w].push_back(v);
+	k++;
 }
 
 void ListGraph::remEdge(int w, int v)

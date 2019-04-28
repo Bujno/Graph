@@ -1,10 +1,17 @@
 ﻿  Source.cpp
-c:\users\bujno\source\repos\graph\graph\listgraph.h(39): warning C4018: '<': signed/unsigned mismatch
-c:\users\bujno\source\repos\graph\graph\listgraph.h(44): warning C4018: '<': signed/unsigned mismatch
-c:\users\bujno\source\repos\graph\graph\listgraph.h(53): warning C4018: '<': signed/unsigned mismatch
-c:\users\bujno\source\repos\graph\graph\matrixgraph.h(28): warning C4018: '<': signed/unsigned mismatch
+c:\users\bujno\source\repos\graph\graph\listgraph.h(41): warning C4018: '<': signed/unsigned mismatch
+c:\users\bujno\source\repos\graph\graph\listgraph.h(46): warning C4018: '<': signed/unsigned mismatch
+c:\users\bujno\source\repos\graph\graph\listgraph.h(55): warning C4018: '<': signed/unsigned mismatch
+c:\users\bujno\source\repos\graph\graph\matrixgraph.h(29): warning C4018: '<': signed/unsigned mismatch
+c:\users\bujno\source\repos\graph\graph\algorithms.h(95): warning C4018: '<': signed/unsigned mismatch
+  c:\users\bujno\source\repos\graph\graph\algorithms.h(93): note: while compiling class template member function 'void Naive<ListGraph>::show(void)'
+  c:\users\bujno\source\repos\graph\graph\source.cpp(42): note: see reference to function template instantiation 'void Naive<ListGraph>::show(void)' being compiled
+  c:\users\bujno\source\repos\graph\graph\source.cpp(40): note: see reference to class template instantiation 'Naive<ListGraph>' being compiled
 c:\users\bujno\source\repos\graph\graph\algorithms.h(18): warning C4018: '<': signed/unsigned mismatch
-  c:\users\bujno\source\repos\graph\graph\algorithms.h(17): note: while compiling class template member function 'void DFS<ListGraph>::show(void)'
-  c:\users\bujno\source\repos\graph\graph\source.cpp(35): note: see reference to function template instantiation 'void DFS<ListGraph>::show(void)' being compiled
-  c:\users\bujno\source\repos\graph\graph\source.cpp(33): note: see reference to class template instantiation 'DFS<ListGraph>' being compiled
+  c:\users\bujno\source\repos\graph\graph\algorithms.h(17): note: while compiling class template member function 'void DFSClass<ListGraph>::show(void)'
+  c:\users\bujno\source\repos\graph\graph\source.cpp(38): note: see reference to function template instantiation 'void DFSClass<ListGraph>::show(void)' being compiled
+  c:\users\bujno\source\repos\graph\graph\source.cpp(36): note: see reference to class template instantiation 'DFSClass<ListGraph>' being compiled
+c:\users\bujno\source\repos\graph\graph\algorithms.h(55): warning C4018: '<': signed/unsigned mismatch
+  c:\users\bujno\source\repos\graph\graph\algorithms.h(45): note: while compiling class template member function 'void Naive<ListGraph>::ccn(void)'
+  c:\users\bujno\source\repos\graph\graph\algorithms.h(69): note: see reference to function template instantiation 'void Naive<ListGraph>::ccn(void)' being compiled
   Graph.vcxproj -> C:\Users\bujno\source\repos\Graph\Debug\Graph.exe

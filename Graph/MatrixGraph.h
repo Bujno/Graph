@@ -9,7 +9,8 @@ class MatrixGraph
 	vector<vector<int> > L;
 public:
 	int s;													//liczba wierzcho³ków
-	MatrixGraph(int s) : L(s, vector<int>(s, 0)), s(s) {}
+	int k;													//liczba krawedzi
+	MatrixGraph(int s) : L(s, vector<int>(s, 0)), s(s) { k = 0; }
 	void addEdge(int, int);
 	void remEdge(int, int);
 	bool exist(int, int);
@@ -41,6 +42,7 @@ void MatrixGraph::addEdge(int w, int v)
 {
 	L[w][v] = 1;
 	L[v][w] = 1;
+	k++;
 }
 
 void MatrixGraph::remEdge(int w, int v)
