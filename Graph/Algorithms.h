@@ -149,15 +149,14 @@ public:
 
 		for (int i = 0; i < G.s; i++)					// Rekurencyjnie odwiedzamy nieodwiedzonych s¹siadów
 		{
-			if (G.exist(start, i))
+			if (G.exist(start, i) && !visited[i])
 			{
-				if (firstDFS && !edgeExist(start, i))	//jesli jest to pierwsze wywolanie funkcji DFS przez funckje ccn i danej krawêdzi nie ma jeszcze na liscie, to dodajemy ja do listy
+				if (firstDFS)							//jesli jest to pierwsze wywolanie funkcji DFS przez funckje ccn i danej krawêdzi nie ma jeszcze na liscie, to dodajemy ja do listy
 				{
 					pair <int, int> temp(start, i);
 					edges.push_back(temp);
-				}
-				if(!visited[i])							
-					DFS(i);
+				}				
+				DFS(i);
 			}
 		}
 	}
@@ -189,14 +188,17 @@ public:
 		}
 		cout << endl;
 	}
+};
 
-	bool edgeExist(int w, int v)					// funkcja sprawdzajaca czy dana krawêdŸ ju¿ istnieje na liscie krawedzi
-	{
-		for (int i = 0; i < edges.size(); i++)
-		{
-			if (edges[i].first == w && edges[i].second == v || edges[i].second == w && edges[i].first == v)
-				return true;
-		}
-		return false;
-	}
+
+
+//-------------------------------------BETTER NAIVE------------------------------------------------------------------------
+
+
+template <class Graph>
+class Trojan
+{
+private:
+	Graph &G;
+
 };
