@@ -8,7 +8,8 @@ class MatrixGraph
 {
 	vector<vector<int> > L;
 public:
-	MatrixGraph(int s) : L(s, vector<int>(s, 0)) {}
+	int s;													//liczba wierzcho³ków
+	MatrixGraph(int s) : L(s, vector<int>(s, 0)), s(s) {}
 	void addEdge(int, int);
 	void remEdge(int, int);
 	bool exist(int, int);

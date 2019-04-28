@@ -8,7 +8,8 @@ class ListGraph
 protected:
 	vector<vector<int> > L;
 public:
-	ListGraph(int s) : L(s, vector<int>()) {}
+	int s;													//liczba wierzcho³ków
+	ListGraph(int s) : L(s, vector<int>()), s(s) {}
 	void addEdge(int, int);
 	void remEdge(int, int);
 	bool exist(int, int);
