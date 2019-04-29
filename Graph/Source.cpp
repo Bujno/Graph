@@ -49,39 +49,47 @@ int main()
 	L_DFS.search(1);
 	L_DFS.show();
 
-	cout << "----------------- LIST" << endl;
+	cout << "----------------- LIST L" << endl;
 
 	Naive <ListGraph> L_Naive(L);
 	L_Naive.bridgeSearch();
 	L_Naive.show();
 
-	cout << "-----------------" << endl;
-
 	BetterNaive <ListGraph> L_Naive2(L);
 	L_Naive2.bridgeSearch();
 	L_Naive2.show();
 
-	cout << "-----------------MARTIX1 " << endl;
+	Trojan <ListGraph> L_Trojan(L);
+	L_Trojan.bridgeSearch();
+	L_Trojan.show();
+
+	cout << "-----------------MARTIX  K" << endl;
 
 	Naive <MatrixGraph> M_Naive(K);
 	M_Naive.bridgeSearch();
 	M_Naive.show();
 
-	cout << "-----------------------" << endl;
 	BetterNaive <MatrixGraph> M_Naive2(K);
 	M_Naive2.bridgeSearch();
 	M_Naive2.show();
 
-	cout << "-----------------MARTIX2 " << endl;
+	Trojan <MatrixGraph> M_Naive21(K);
+	M_Naive21.bridgeSearch();
+	M_Naive21.show();
+
+	cout << "-----------------MARTIX M " << endl;
 
 	Naive <MatrixGraph> M_Naive3(M);
 	M_Naive3.bridgeSearch();
 	M_Naive3.show();
 	
-	cout << "-----------------------" << endl;
 	BetterNaive <MatrixGraph> M_Naive22(M);
 	M_Naive22.bridgeSearch();
-	M_Naive22.show();
+	M_Naive22.show(); 
+
+	Trojan <MatrixGraph> Trojan_L(M);
+	Trojan_L.bridgeSearch();
+	Trojan_L.show();
 
 	system("pause");
 	return 0;

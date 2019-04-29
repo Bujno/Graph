@@ -5,32 +5,6 @@
 
 using namespace std;
 
-template <class Graph>
-class DFSClass
-{
-private:
-	Graph &G;
-	vector <bool> visited;
-	vector <int> components;
-public:
-	void show()
-	{
-		for (int i = 0; i < components.size(); i++)
-			cout << components[i] << " ";
-		cout << endl;
-	}
-	DFSClass(Graph &G) :G(G), visited(G.s, 0)  {}
-	void search(int start)
-	{
-		visited[start] = true;							// Zaznaczamy wêze³ jako odwiedzony					
-		components.push_back(start);					// Przetwarzamy wêze³ (dodaje do listy)
-
-		for (int i = 0; i < G.s; i++)					// Rekurencyjnie odwiedzamy nieodwiedzonych s¹siadów
-			if (G.exist(start,i) && !visited[i])
-				search(i);
-	}
-};
-
 
 //-----------------------------------NAIVE--------------------------------------------------------------------------
 
@@ -200,5 +174,61 @@ class Trojan
 {
 private:
 	Graph &G;
+	vector<pair<int, int> >  bridges;
+	int counter;					//licznik spójnych sk³adowych
+	int vertexCounter;
+	vector <bool> visited;
+	vector<int> vertexNumber;		//Numeracja wierzcho³ków
 
+public: 
+	Trojan(Graph &G) : G(G), visited(G.s, 0), vertexNumber(G.s,0) {}
+
+	int TrojanDFS(int v, int father)		// Funkcja rekurencyjna wyszukuj¹ca mosty,  v  - numer bie¿¹cego wierzcho³ka, father - ojciec bie¿¹cego wierzcho³ka na drzewie rozpinaj¹cym
+	{
+		int Low = vertexCounter;
+		vertexNumber[v] = vertexCounter;
+		vertexCounter++;
+
+		for (int i = 0; i < G.s; i++)					// Rekurencyjnie odwiedzamy nieodwiedzonych s¹siadów
+		{
+			if (G.exist(v, i) && i != father)			//Jesli i jest s¹siadem v i i nie jest ojcem v
+			{
+				if (vertexNumber[i] == 0)				//oraz i nie zosta³o jeszcze odwiedzone 
+				{
+					int temp = TrojanDFS(i, v);			//rekurencyjnie odwiedzam s¹siada i zapamietuje jego wartoœæ Low
+					if (temp < Low) Low = temp;			// ten i nastêpny elif ustawiaja jako wartoœæ Low mniejsz¹ spoœród temp i vertexNumber ojca
+				}
+				else if (vertexNumber[i] < Low) Low = vertexNumber[i];
+
+			}
+		}
+
+		if ((father > -1) && (Low == vertexNumber[v]))  //jeœli te wartoœci s¹ takie same, to znaczy ¿e jest to most
+		{
+			pair <int, int> temp(father, v);
+			bridges.push_back(temp);
+		}
+
+		return Low;										//zwracam wartoœæ Low
+	}
+
+	void bridgeSearch()
+	{
+		for (int i = 0; i < G.s; i++)
+			if (vertexNumber[i] == 0)			// Szukamy nieodwiedzonego wierzcho³ka
+			{
+				vertexCounter = 1;				// Pocz¹tek numeracji DFS
+				TrojanDFS(i, -1);				// Szukamy mostów
+			}
+	}
+
+	void show()
+	{
+		cout << "Mosty: ";
+		for (int i = 0; i < bridges.size(); i++)
+		{
+			cout << bridges[i].first << "," << bridges[i].second << " ";
+		}
+		cout << endl;
+	}
 };
