@@ -170,7 +170,7 @@ public:
 
 
 template <class Graph>
-class Trojan
+class Tarjan
 {
 private:
 	Graph &G;
@@ -181,9 +181,9 @@ private:
 	vector<int> vertexNumber;		//Numeracja wierzcho³ków
 
 public: 
-	Trojan(Graph &G) : G(G), visited(G.s, 0), vertexNumber(G.s,0) {}
+	Tarjan(Graph &G) : G(G), visited(G.s, 0), vertexNumber(G.s,0) {}
 
-	int TrojanDFS(int v, int father)		// Funkcja rekurencyjna wyszukuj¹ca mosty,  v  - numer bie¿¹cego wierzcho³ka, father - ojciec bie¿¹cego wierzcho³ka na drzewie rozpinaj¹cym
+	int TarjanDFS(int v, int father)		// Funkcja rekurencyjna wyszukuj¹ca mosty,  v  - numer bie¿¹cego wierzcho³ka, father - ojciec bie¿¹cego wierzcho³ka na drzewie rozpinaj¹cym
 	{
 		int Low = vertexCounter;
 		vertexNumber[v] = vertexCounter;
@@ -195,7 +195,7 @@ public:
 			{
 				if (vertexNumber[i] == 0)				//oraz i nie zosta³o jeszcze odwiedzone 
 				{
-					int temp = TrojanDFS(i, v);			//rekurencyjnie odwiedzam s¹siada i zapamietuje jego wartoœæ Low
+					int temp = TarjanDFS(i, v);			//rekurencyjnie odwiedzam s¹siada i zapamietuje jego wartoœæ Low
 					if (temp < Low) Low = temp;			// ten i nastêpny elif ustawiaja jako wartoœæ Low mniejsz¹ spoœród temp i vertexNumber ojca
 				}
 				else if (vertexNumber[i] < Low) Low = vertexNumber[i];
@@ -218,7 +218,7 @@ public:
 			if (vertexNumber[i] == 0)			// Szukamy nieodwiedzonego wierzcho³ka
 			{
 				vertexCounter = 1;				// Pocz¹tek numeracji DFS
-				TrojanDFS(i, -1);				// Szukamy mostów
+				TarjanDFS(i, -1);				// Szukamy mostów
 			}
 	}
 

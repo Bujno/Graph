@@ -44,10 +44,6 @@ int main()
 	K.addEdge(5, 6);
 	K.addEdge(4, 5);
 
-	
-	DFSClass <ListGraph> L_DFS(L);
-	L_DFS.search(1);
-	L_DFS.show();
 
 	cout << "----------------- LIST L" << endl;
 
@@ -59,7 +55,7 @@ int main()
 	L_Naive2.bridgeSearch();
 	L_Naive2.show();
 
-	Trojan <ListGraph> L_Trojan(L);
+	Tarjan <ListGraph> L_Trojan(L);
 	L_Trojan.bridgeSearch();
 	L_Trojan.show();
 
@@ -73,7 +69,7 @@ int main()
 	M_Naive2.bridgeSearch();
 	M_Naive2.show();
 
-	Trojan <MatrixGraph> M_Naive21(K);
+	Tarjan <MatrixGraph> M_Naive21(K);
 	M_Naive21.bridgeSearch();
 	M_Naive21.show();
 
@@ -87,7 +83,7 @@ int main()
 	M_Naive22.bridgeSearch();
 	M_Naive22.show(); 
 
-	Trojan <MatrixGraph> Trojan_L(M);
+	Tarjan <MatrixGraph> Trojan_L(M);
 	Trojan_L.bridgeSearch();
 	Trojan_L.show();
 
