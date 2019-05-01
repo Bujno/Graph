@@ -116,6 +116,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Algorithms.h" />
+    <ClInclude Include="Generator.h" />
     <ClInclude Include="ListGraph.h" />
     <ClInclude Include="MatrixGraph.h" />
   </ItemGroup>
