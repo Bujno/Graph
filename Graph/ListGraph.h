@@ -13,19 +13,6 @@ public:
 	void addEdge(int, int);
 	void remEdge(int, int);
 	bool exist(int, int);
-	const vector<int> &getNeighbours(int v) { return L[v]; }
-	class AdjIterator
-	{
-		const ListGraph &G;
-		size_t index = 0;
-		int node;
-	public:
-		AdjIterator(const ListGraph G, int v) : G(G), node(v) {}
-		int begin() { if (G.L[node].size() == 0) return -1; index = 0; return G.L[node][0]; }
-		bool end() { return (index == G.L[node].size()); }
-		int next() { return G.L[node][index++]; }
-	};
-	friend class AdjIterator;
 };
 
 void ListGraph::addEdge(int w, int v)

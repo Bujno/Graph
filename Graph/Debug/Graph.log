@@ -3,26 +3,16 @@ c:\users\bujno\source\repos\graph\graph\listgraph.h(39): warning C4018: '<': sig
 c:\users\bujno\source\repos\graph\graph\listgraph.h(44): warning C4018: '<': signed/unsigned mismatch
 c:\users\bujno\source\repos\graph\graph\listgraph.h(53): warning C4018: '<': signed/unsigned mismatch
 c:\users\bujno\source\repos\graph\graph\matrixgraph.h(28): warning C4018: '<': signed/unsigned mismatch
-c:\users\bujno\source\repos\graph\graph\generator.h(11): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-c:\users\bujno\source\repos\graph\graph\algorithms.h(228): warning C4018: '<': signed/unsigned mismatch
-  c:\users\bujno\source\repos\graph\graph\algorithms.h(226): note: while compiling class template member function 'void Tarjan<MatrixGraph>::show(void)'
-  c:\users\bujno\source\repos\graph\graph\source.cpp(107): note: see reference to function template instantiation 'void Tarjan<MatrixGraph>::show(void)' being compiled
-  c:\users\bujno\source\repos\graph\graph\source.cpp(105): note: see reference to class template instantiation 'Tarjan<MatrixGraph>' being compiled
-c:\users\bujno\source\repos\graph\graph\algorithms.h(159): warning C4018: '<': signed/unsigned mismatch
-  c:\users\bujno\source\repos\graph\graph\algorithms.h(157): note: while compiling class template member function 'void BetterNaive<MatrixGraph>::show(void)'
-  c:\users\bujno\source\repos\graph\graph\source.cpp(103): note: see reference to function template instantiation 'void BetterNaive<MatrixGraph>::show(void)' being compiled
-  c:\users\bujno\source\repos\graph\graph\source.cpp(101): note: see reference to class template instantiation 'BetterNaive<MatrixGraph>' being compiled
+c:\users\bujno\source\repos\graph\graph\generator.h(12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
 c:\users\bujno\source\repos\graph\graph\algorithms.h(143): warning C4018: '<': signed/unsigned mismatch
-  c:\users\bujno\source\repos\graph\graph\algorithms.h(139): note: while compiling class template member function 'void BetterNaive<MatrixGraph>::bridgeSearch(void)'
-  c:\users\bujno\source\repos\graph\graph\source.cpp(102): note: see reference to function template instantiation 'void BetterNaive<MatrixGraph>::bridgeSearch(void)' being compiled
-c:\users\bujno\source\repos\graph\graph\algorithms.h(76): warning C4018: '<': signed/unsigned mismatch
-  c:\users\bujno\source\repos\graph\graph\algorithms.h(74): note: while compiling class template member function 'void Naive<MatrixGraph>::show(void)'
-  c:\users\bujno\source\repos\graph\graph\source.cpp(99): note: see reference to function template instantiation 'void Naive<MatrixGraph>::show(void)' being compiled
-  c:\users\bujno\source\repos\graph\graph\source.cpp(97): note: see reference to class template instantiation 'Naive<MatrixGraph>' being compiled
+  c:\users\bujno\source\repos\graph\graph\algorithms.h(139): note: while compiling class template member function 'void BetterNaive<ListGraph>::bridgeSearch(void)'
+  c:\users\bujno\source\repos\graph\graph\source.cpp(58): note: see reference to function template instantiation 'void BetterNaive<ListGraph>::bridgeSearch(void)' being compiled
+  c:\users\bujno\source\repos\graph\graph\source.cpp(57): note: see reference to class template instantiation 'BetterNaive<ListGraph>' being compiled
 c:\users\bujno\source\repos\graph\graph\algorithms.h(113): warning C4018: '<': signed/unsigned mismatch
-  c:\users\bujno\source\repos\graph\graph\algorithms.h(103): note: while compiling class template member function 'void BetterNaive<MatrixGraph>::ccn(void)'
-  c:\users\bujno\source\repos\graph\graph\algorithms.h(140): note: see reference to function template instantiation 'void BetterNaive<MatrixGraph>::ccn(void)' being compiled
+  c:\users\bujno\source\repos\graph\graph\algorithms.h(103): note: while compiling class template member function 'void BetterNaive<ListGraph>::ccn(void)'
+  c:\users\bujno\source\repos\graph\graph\algorithms.h(140): note: see reference to function template instantiation 'void BetterNaive<ListGraph>::ccn(void)' being compiled
 c:\users\bujno\source\repos\graph\graph\algorithms.h(34): warning C4018: '<': signed/unsigned mismatch
-  c:\users\bujno\source\repos\graph\graph\algorithms.h(24): note: while compiling class template member function 'void Naive<MatrixGraph>::ccn(void)'
-  c:\users\bujno\source\repos\graph\graph\algorithms.h(50): note: see reference to function template instantiation 'void Naive<MatrixGraph>::ccn(void)' being compiled
+  c:\users\bujno\source\repos\graph\graph\algorithms.h(24): note: while compiling class template member function 'void Naive<ListGraph>::ccn(void)'
+  c:\users\bujno\source\repos\graph\graph\algorithms.h(50): note: see reference to function template instantiation 'void Naive<ListGraph>::ccn(void)' being compiled
+  c:\users\bujno\source\repos\graph\graph\source.cpp(52): note: see reference to class template instantiation 'Naive<ListGraph>' being compiled
   Graph.vcxproj -> C:\Users\bujno\source\repos\Graph\Debug\Graph.exe

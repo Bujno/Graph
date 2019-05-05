@@ -13,28 +13,6 @@ public:
 	void addEdge(int, int);
 	void remEdge(int, int);
 	bool exist(int, int);
-	const vector<int> &getNeighbours(int v) { return L[v]; }
-
-	class AdjIterator
-	{
-		const MatrixGraph &G;
-		size_t index = 0;
-		int node;
-	public:
-		AdjIterator(const MatrixGraph G, int v) : G(G), node(v) {}
-		int begin()
-		{
-			index = 0;
-			for (int i = 0; i < G.L[node].size(); i++)
-			{
-				if (G.L[node][i] == 1) return i;
-			}
-			return -1;
-		}
-		bool end() { return (index == G.L[node].size()); }
-		int next() { if (G.L[node][index] == 0) index++; else return G.L[node][index++]; }
-	};
-	friend class AdjIterator;
 };
 
 void MatrixGraph::addEdge(int w, int v)
