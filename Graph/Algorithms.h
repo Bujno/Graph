@@ -16,11 +16,11 @@ private:
 	Graph &G;
 	vector<pair<int, int> >  bridges;
 	vector <bool> visited;
-	int counter;													//licznik spójnych sk³adowych
+	int counter;													//licznik spÃ³jnych skÅ‚adowych
 public:
 	Naive(Graph &G) : G(G), visited(G.s, 0) {}
 
-	void ccn()														//Funkcja zwracaj¹ca liczbê spójnych sk³adowych w grafie
+	void ccn()														//Funkcja zwracajÄ…ca liczbÄ™ spÃ³jnych skÅ‚adowych w grafie
 	{
 		counter = 0;
 		for (int i = 0; i < G.s; i++)
@@ -34,13 +34,13 @@ public:
 		for (int i = 0; i < visited.size(); i++) visited[i] = 0;
 	}
 
-	//Zaznaczamy bie¿¹cy wierzcho³ek jako odwiedzony. Przechodzimy do kolejnych s¹siadów wierzcho³ka bie¿¹cego i wykonujemy dla nich t¹ sam¹ operacjê 
-	//(tzn. zaznaczamy je jako odwiedzone i przechodzimy do ich s¹siadów). Przechodzenie koñczymy, gdy zostan¹ w ten sposób odwiedzone wszystkie dostêpne wierzcho³ki.
+	//Zaznaczamy bieÅ¼Ä…cy wierzchoÅ‚ek jako odwiedzony. Przechodzimy do kolejnych sÄ…siadÃ³w wierzchoÅ‚ka bieÅ¼Ä…cego i wykonujemy dla nich tÄ… samÄ… operacjÄ™ 
+	//(tzn. zaznaczamy je jako odwiedzone i przechodzimy do ich sÄ…siadÃ³w). Przechodzenie koÅ„czymy, gdy zostanÄ… w ten sposÃ³b odwiedzone wszystkie dostÄ™pne wierzchoÅ‚ki.
 	void DFS(int start)								
 	{
-		visited[start] = true;							// Zaznaczamy wêze³ jako odwiedzony					
+		visited[start] = true;							// Zaznaczamy wÄ™zeÅ‚ jako odwiedzony					
 
-		for (int i = 0; i < G.s; i++)					// Rekurencyjnie odwiedzamy nieodwiedzonych s¹siadów
+		for (int i = 0; i < G.s; i++)					// Rekurencyjnie odwiedzamy nieodwiedzonych sÄ…siadÃ³w
 			if (G.exist(start, i) && !visited[i])
 				DFS(i);
 	}
@@ -50,17 +50,17 @@ public:
 		ccn();
 		int orginalCounter = counter;
 		
-		for (int i = 0 ; i < G.s ; i++)				//	i - pierwszy wierzcho³ek
+		for (int i = 0 ; i < G.s ; i++)				//	i - pierwszy wierzchoÅ‚ek
 		{
-			for (int j = i + 1; j < G.s; j++)		// j - drugi wierzcho³ek
+			for (int j = i + 1; j < G.s; j++)		// j - drugi wierzchoÅ‚ek
 			{
-				if (G.exist(i, j))					// jeœli istnieje krawêdŸ ³¹cz¹ca i,j
+				if (G.exist(i, j))					// jeÅ›li istnieje krawÄ™dÅº Å‚Ä…czÄ…ca i,j
 				{
 					G.remEdge(i,j);
 					ccn();							// sprawdzamy liczbe skladowych dla grafu bez tej krawedzi
 					G.addEdge(i, j);
 
-					if (counter > orginalCounter)	// jesli lista skladowych jest wieksza to znaczy ze ta krawêdŸ jest mostem
+					if (counter > orginalCounter)	// jesli lista skladowych jest wieksza to znaczy ze ta krawÄ™dÅº jest mostem
 					{
 						pair<int, int> temp(i, j);
 						bridges.push_back(temp);	//wiec dodaje ja do vectora przechowujacego krawedzie bedace mostami
@@ -93,13 +93,13 @@ private:
 	vector<pair<int, int> >  bridges;
 	vector <bool> visited;
 	vector<pair<int, int> >  edges;
-	int counter;					//licznik spójnych sk³adowych
+	int counter;					//licznik spÃ³jnych skÅ‚adowych
 	bool firstDFS;
 
 public:
 	BetterNaive(Graph &G) : G(G), visited(G.s, 0) {firstDFS = 1; }
 
-	void ccn()														//Funkcja zwracaj¹ca liczbê spójnych sk³adowych w grafie
+	void ccn()														//Funkcja zwracajÄ…ca liczbÄ™ spÃ³jnych skÅ‚adowych w grafie
 	{
 		counter = 0;
 		for (int i = 0; i < G.s; i++)
@@ -114,18 +114,18 @@ public:
 		firstDFS = 0;
 	}
 
-	//Zaznaczamy bie¿¹cy wierzcho³ek jako odwiedzony. Przechodzimy do kolejnych s¹siadów wierzcho³ka bie¿¹cego i wykonujemy dla nich t¹ sam¹ operacjê 
-	//(tzn. zaznaczamy je jako odwiedzone i przechodzimy do ich s¹siadów). Nastepnie znaleziona krawedz wrzucamy do listy przechowujacej krawêdzie.
-	//Przechodzenie koñczymy, gdy zostan¹ w ten sposób odwiedzone wszystkie dostêpne wierzcho³ki.
+	//Zaznaczamy bieÅ¼Ä…cy wierzchoÅ‚ek jako odwiedzony. Przechodzimy do kolejnych sÄ…siadÃ³w wierzchoÅ‚ka bieÅ¼Ä…cego i wykonujemy dla nich tÄ… samÄ… operacjÄ™ 
+	//(tzn. zaznaczamy je jako odwiedzone i przechodzimy do ich sÄ…siadÃ³w). Nastepnie znaleziona krawedz wrzucamy do listy przechowujacej krawÄ™dzie.
+	//Przechodzenie koÅ„czymy, gdy zostanÄ… w ten sposÃ³b odwiedzone wszystkie dostÄ™pne wierzchoÅ‚ki.
 	void DFS(int start)
 	{
-		visited[start] = true;							// Zaznaczamy wierzcho³ek jako odwiedzony					
+		visited[start] = true;							// Zaznaczamy wierzchoÅ‚ek jako odwiedzony					
 
-		for (int i = 0; i < G.s; i++)					// Rekurencyjnie odwiedzamy nieodwiedzonych s¹siadów
+		for (int i = 0; i < G.s; i++)					// Rekurencyjnie odwiedzamy nieodwiedzonych sÄ…siadÃ³w
 		{
 			if (G.exist(start, i) && !visited[i])
 			{
-				if (firstDFS)							//jesli jest to pierwsze wywolanie funkcji DFS przez funckje ccn i danej krawêdzi nie ma jeszcze na liscie, to dodajemy ja do listy
+				if (firstDFS)							//jesli jest to pierwsze wywolanie funkcji DFS przez funckje ccn i danej krawÄ™dzi nie ma jeszcze na liscie, to dodajemy ja do listy
 				{
 					pair <int, int> temp(start, i);
 					edges.push_back(temp);
@@ -140,13 +140,13 @@ public:
 		ccn();
 		int orginalCounter = counter;
 
-		for (int i = 0; i < edges.size(); i++)		//	przechodzimy przez wszystkie krawêdzie 
+		for (int i = 0; i < edges.size(); i++)		//	przechodzimy przez wszystkie krawÄ™dzie 
 		{
 			G.remEdge(edges[i].first, edges[i].second);
 			ccn();									// sprawdzamy liczbe skladowych dla grafu bez danej krawedzi
 			G.addEdge(edges[i].first, edges[i].second);
 
-			if (counter > orginalCounter)			// jesli lista skladowych jest wieksza to znaczy ze ta krawêdŸ jest mostem
+			if (counter > orginalCounter)			// jesli lista skladowych jest wieksza to znaczy ze ta krawÄ™dÅº jest mostem
 			{
 				bridges.push_back(edges[i]);		//wiec dodaje ja do vectora przechowujacego krawedzie bedace mostami
 			}
@@ -166,7 +166,7 @@ public:
 
 
 
-//-------------------------------------BETTER NAIVE------------------------------------------------------------------------
+//-------------------------------------TARJAN------------------------------------------------------------------------
 
 
 template <class Graph>
@@ -175,50 +175,50 @@ class Tarjan
 private:
 	Graph &G;
 	vector<pair<int, int> >  bridges;
-	int counter;					//licznik spójnych sk³adowych
+	int counter;					//licznik spÃ³jnych skÅ‚adowych
 	int vertexCounter;
 	vector <bool> visited;
-	vector<int> vertexNumber;		//Numeracja wierzcho³ków
+	vector<int> vertexNumber;		//Numeracja wierzchoÅ‚kÃ³w
 
 public: 
 	Tarjan(Graph &G) : G(G), visited(G.s, 0), vertexNumber(G.s,0) {}
 
-	int TarjanDFS(int v, int father)		// Funkcja rekurencyjna wyszukuj¹ca mosty,  v  - numer bie¿¹cego wierzcho³ka, father - ojciec bie¿¹cego wierzcho³ka na drzewie rozpinaj¹cym
+	int TarjanDFS(int v, int father)		// Funkcja rekurencyjna wyszukujÄ…ca mosty,  v  - numer bieÅ¼Ä…cego wierzchoÅ‚ka, father - ojciec bieÅ¼Ä…cego wierzchoÅ‚ka na drzewie rozpinajÄ…cym
 	{
 		int Low = vertexCounter;
 		vertexNumber[v] = vertexCounter;
 		vertexCounter++;
 
-		for (int i = 0; i < G.s; i++)					// Rekurencyjnie odwiedzamy nieodwiedzonych s¹siadów
+		for (int i = 0; i < G.s; i++)					// Rekurencyjnie odwiedzamy nieodwiedzonych sÄ…siadÃ³w
 		{
-			if (G.exist(v, i) && i != father)			//Jesli i jest s¹siadem v i i nie jest ojcem v
+			if (G.exist(v, i) && i != father)			//Jesli i jest sÄ…siadem v i i nie jest ojcem v
 			{
-				if (vertexNumber[i] == 0)				//oraz i nie zosta³o jeszcze odwiedzone 
+				if (vertexNumber[i] == 0)				//oraz i nie zostaÅ‚o jeszcze odwiedzone 
 				{
-					int temp = TarjanDFS(i, v);			//rekurencyjnie odwiedzam s¹siada i zapamietuje jego wartoœæ Low
-					if (temp < Low) Low = temp;			// ten i nastêpny elif ustawiaja jako wartoœæ Low mniejsz¹ spoœród temp i vertexNumber ojca
+					int temp = TarjanDFS(i, v);			//rekurencyjnie odwiedzam sÄ…siada i zapamietuje jego wartoÅ›Ä‡ Low
+					if (temp < Low) Low = temp;			// ten i nastÄ™pny elif ustawiaja jako wartoÅ›Ä‡ Low mniejszÄ… spoÅ›rÃ³d temp i vertexNumber ojca
 				}
 				else if (vertexNumber[i] < Low) Low = vertexNumber[i];
 
 			}
 		}
 
-		if ((father > -1) && (Low == vertexNumber[v]))  //jeœli te wartoœci s¹ takie same, to znaczy ¿e jest to most
+		if ((father > -1) && (Low == vertexNumber[v]))  //jeÅ›li te wartoÅ›ci sÄ… takie same, to znaczy Å¼e jest to most
 		{
 			pair <int, int> temp(father, v);
 			bridges.push_back(temp);
 		}
 
-		return Low;										//zwracam wartoœæ Low
+		return Low;										//zwracam wartoÅ›Ä‡ Low
 	}
 
 	void bridgeSearch()
 	{
 		for (int i = 0; i < G.s; i++)
-			if (vertexNumber[i] == 0)			// Szukamy nieodwiedzonego wierzcho³ka
+			if (vertexNumber[i] == 0)			// Szukamy nieodwiedzonego wierzchoÅ‚ka
 			{
-				vertexCounter = 1;				// Pocz¹tek numeracji DFS
-				TarjanDFS(i, -1);				// Szukamy mostów
+				vertexCounter = 1;				// PoczÄ…tek numeracji DFS
+				TarjanDFS(i, -1);				// Szukamy mostÃ³w
 			}
 	}
 
